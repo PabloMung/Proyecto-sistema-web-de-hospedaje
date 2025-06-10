@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CENTRO ECOTURÍSTICO LA CUMBRE IXTEPEJI</title>
+    <link rel="icon" href="img/logoixtepeji.jpg" type="image/png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+        .navbar .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .navbar .nav-link:hover {
+            color: #1e90ff !important; /* Dodger Blue */
+        }
+        .text-sm {
+            color: #fff !important;
+            margin-right: 20px;
+        }
+        .text-sm:hover {
+            color: #1e90ff !important;
+        }
+        .text-gray-700 {
+            color: #fff !important;
+            margin-right: 20px;
+        }
+        .text-gray-700:hover {
+            color: #1e90ff !important;
+        }
+        .textos-header {
+            position: relative;
+            height: 500px;
+            background: url('img/fondo3.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .textos-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .textos-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .textos-header p {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+        .wave svg {
+            height: 100%;
+            width: 100%;
+            fill: #1e90ff; /* Dodger Blue for wave */
+        }
+        .section-separator {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #87ceeb, transparent); /* Light Sky Blue gradient */
+            margin: 40px 0;
+        }
+        .content-block {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .sobre-nosotros, .about-services, .portafolio {
+            padding: 0;
+        }
+        .titulo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1e90ff; /* Dodger Blue */
+        }
+        .span1 {
+            color: #4682b4; /* Steel Blue */
+            margin-right: 10px;
+        }
+        .contenedor-sobre-nosotros {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .imagen-about-us {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .contenido-textos {
+            flex: 1;
+            max-width: 600px;
+        }
+        .contenido-textos p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .contenido-textos h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #4682b4; /* Steel Blue */
+        }
+        .contenido-textos ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contenido-textos ul li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .servicio-cont {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .servicio-ind {
+            text-align: center;
+            max-width: 200px;
+        }
+        .servicio-ind img {
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .servicio-ind h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 10px;
+            color: #4682b4; /* Steel Blue */
+        }
+        .galeria-port {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .imagen-port {
+            position: relative;
+            max-width: 300px;
+        }
+        .imagen-port img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .hover-galeria {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 144, 255, 0.7); /* Dodger Blue with transparency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 10px;
+        }
+        .imagen-port:hover .hover-galeria {
+            opacity: 1;
+        }
+        .hover-galeria a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .contenedor-footer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .content-foo {
+            max-width: 200px;
+            text-align: center;
+        }
+        .content-foo a {
+            color: #1e90ff; /* Dodger Blue */
+            text-decoration: none;
+        }
+        .content-foo a:hover {
+            text-decoration: underline;
+        }
+        .content-foo img {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+        .content-foo h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #4682b4; /* Steel Blue */
+        }
+        .content-foo p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .titulo-final {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #1e90ff; /* Dodger Blue */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h:form>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a href="#noso" class="nav-link active">Nosotros</a>
+                            <a href="#ser" class="nav-link">Servicios</a>
+                            <a href="#eve" class="nav-link">Eventos</a>
+                            <a href="#con" class="nav-link">Contactos</a>
+                            <a href="indexHome.xhtml" class="nav-link">Home</a>
+                        </div>
+                        <div class="ml-auto">
+                            <h:link outcome="inicio.xhtml" value="Home" rendered="#{user.loggedIn}" styleClass="text-sm text-gray-700" />
+                            <h:link outcome="/login/index.xhtml" value="Iniciar Sesión o Registrarse" styleClass="text-sm" />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <section class="textos-header">
+                <h1>Centro Ecoturístico
+                    <p>La Cumbre Ixtepeji</p>
+                </h1>
+            </section>
+            
+        </header>
+
+        <main>
+            <div class="content-block">
+                <section class="sobre-nosotros">
+                    <h2 class="titulo" id="noso"><span class="span1">1</span>Nosotros</h2>
+                    <div class="contenedor-sobre-nosotros">
+                        <img src="img/mirador.jpg" alt="Sobre Nosotros" class="imagen-about-us" />
+                        <div class="contenido-textos">
+                            <p>
+                                El centro ecoturístico "LA CUMBRE IXTEPEJI" comienza a brindar sus servicios a partir del año de 1986, ofreciendo
+                                a cada uno de los visitantes un lugar cómodo, tranquilo y céntrico para descansar y pasar un momento agradable.
+                            </p>
+                            <h3><span>.</span>Valores:</h3>
+                            <ul>
+                                <li>1. Honestidad</li>
+                                <li>2. Respeto</li>
+                                <li>3. Creatividad</li>
+                                <li>4. Equidad</li>
+                                <li>5. Solidaridad</li>
+                                <li>7. Puntualidad</li>
+                                <li>8. Responsabilidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <hr class="section-separator" />
+            </div>
+
+            <div class="content-block">
+                <section class="about-services">
+                    <h2 class="titulo" id="ser"><span class="span1">2</span>Servicios</h2>
+                    <div class="servicio-cont">
+                        <div class="servicio-ind">
+                            <img src="img/caba.png" alt="Cabaña" style="height: 130px;" />
+                            <h3>Cabaña</h3>
+                        </div>
+                        <div class="servicio-ind">
+                            <img src="img/restaurante.jpeg" alt="Restaurante" style="height: 130px;" />
+                            <h3>Restaurante</h3>
+                        </div>
+                        <div class="servicio-ind">
+                            <img src="img/tirolesa.jpg" alt="Tirolesa" style="height: 130px;" />
+                            <h3>Tirolesa</h3>
+                        </div>
+                        <div class="servicio-ind">
+                            <img src="img/caminata.jpg" alt="Senderismo" style="height: 130px;" />
+                            <h3>Senderismo</h3>
+                        </div>
+                        <div class="servicio-ind">
+                            <img src="img/cil.png" alt="Ciclismo Montaña" style="height:130px; width: 70%;" />
+                            <h3>Ciclismo Montaña</h3>
+                        </div>
+                    </div>
+                </section>
+                <hr class="section-separator" />
+            </div>
+
+            <div class="content-block">
+                <section class="portafolio">
+                    <h2 class="titulo" id="eve"><span class="span1">3</span>Nos Especializamos En</h2>
+                    <div class="galeria-port">
+                        <div class="imagen-port">
+                            <img src="img/cabañas.jpeg" alt="Cabañas" />
+                            <div class="hover-galeria">
+                                <a href="https://www.facebook.com/share/BPkTWZEZJ6oFKQyH/?mibextid=qi2Omg">CABAÑAS</a>
+                            </div>
+                        </div>
+                        <div class="imagen-port">
+                            <img src="img/cilcis.png" alt="Ciclismo" />
+                            <div class="hover-galeria">
+                                <a href="https://fb.watch/oUH3MGM1RX/">CICLISMO</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="footer">
+                    <div class="contenedor-footer">
+                        <div class="content-foo" id="con">
+                            <a href="https://api.whatsapp.com/send?phone=%2B529511585206">
+                                <img src="img/telefono.jpg" alt="Teléfono" style="width: 7%;" />
+                            </a>
+                            <h5>Teléfono</h5>
+                            <p>951 173 5307</p>
+                            <p>951 560 4039</p>
+                        </div>
+                        <div class="content-foo">
+                            <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                                <img src="img/face.png" alt="Facebook" style="width: 7%;" />
+                            </a>
+                            <h5>Facebook</h5>
+                            <p>CENTRO ECOTURÍSTICO <br /> LA CUMBRE IXTEPEJI</p>
+                        </div>
+                        <div class="content-foo">
+                            <a href="https://maps.app.goo.gl/yLPMqcwaZDsenF6J7">
+                                <img src="img/ubicacion.jpg" alt="Ubicación" style="width: 8%;" />
+                            </a>
+                            <h5>Ubicación</h5>
+                            <p>Carretera federal 175 Oaxaca-Guelatao, Santa Catarina Ixtepeji</p>
+                        </div>
+                        <div class="content-foo">
+                            <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                                <img src="img/opinion.jpg" alt="Opiniones" style="width: 4%;" />
+                            </a>
+                            <h5>Opiniones</h5>
+                            <p>Lo que nuestros clientes opinan.</p>
+                        </div>
+                    </div>
+                    <h2 class="titulo-final"><b>Centro Ecoturístico | LA CUMBRE IXTEPEJI</b></h2>
+                </div>
+            </div>
+        </main>
+    </h:form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../templeates/general.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <section>
+                        <!-- Encabezado -->
+                        <div>
+                            <h3 style="color:#000;">Editar Rol</h3>
+                        </div>
+
+                        <!-- Mensajes -->
+                        <h:messages globalOnly="true" layout="table" style="color: red;" />
+
+                        <label class="text-danger">Los campos con * son obligatorios</label>
+
+                        <!-- Campo: Nombre del Rol -->
+                        <div class="form-group">
+                            <label for="name" style="color: #000; font-size: 15px;">Nombre del Rol:</label> 
+                            <span class="required text-danger">*</span>
+                            <h:inputText id="name" value="#{aDRol.rol.nombre}" required="true"
+                                         styleClass="form-control">
+                                <f:passThroughAttribute name="placeholder" value="Ingrese el nombre del rol" />
+                            </h:inputText>
+                        </div>
+
+                        <!-- Permisos -->
+                        <h3>Permisos para este Rol:</h3>
+                        <h:selectManyCheckbox value="#{aDRol.permisosSeleccionados}" layout="pageDirection">
+                            <f:selectItems value="#{aDRol.permisos}" var="permiso"
+                                           itemLabel="#{permiso.nombre}" itemValue="#{permiso.id}" />
+                        </h:selectManyCheckbox>
+                        <br />
+
+                        <!-- Botones -->
+                        <div>
+                            <h:commandButton value="Guardar Cambios" action="#{aDRol.savePermisosForRol}" styleClass="btn btn-primary" />
+                            <h:button value="Cancelar" outcome="/roles/index.xhtml" styleClass="btn btn-warning" />
+                        </div>
+                    </section>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

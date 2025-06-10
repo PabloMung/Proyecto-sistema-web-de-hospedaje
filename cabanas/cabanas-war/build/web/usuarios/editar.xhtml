@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<body>
+    <ui:composition template="./../templeates/general.xhtml">
+        <ui:define name="top">
+            Editar Usuario - Cabañas Ixtepeji
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <section class="container">
+                    <!-- Encabezado de la sección -->
+                    <div class="mb-4">
+                        <h3 class="page__heading">Editar Usuario</h3>
+                        <p class="text-danger mb-2">Los campos con * son obligatorios</p>
+                    </div>
+
+                    <!-- Formulario para editar el usuario -->
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">Nombre <span class="text-danger">*</span></label>
+                        <h:inputText id="name" value="#{aDUsuario.selectedUser.nombre}" required="true" 
+                                     class="form-control">
+                            <f:passThroughAttribute name="placeholder" value="Ingrese el nombre" />
+                        </h:inputText>
+                        <div style="position: absolute; top: 10px; right: 100px;">
+                            <ul style="color: red; list-style-type: none;">
+                                <ui:repeat value="#{facesContext.messageList}" var="msg">
+                                    <li>#{msg.summary} - #{msg.detail}</li>
+                                </ui:repeat>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+                        <h:inputText id="email" value="#{aDUsuario.selectedUser.email}" required="true" 
+                                     class="form-control">
+                            <f:passThroughAttribute name="placeholder" value="Ingrese el correo electrónico" />
+                        </h:inputText>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="password" class="form-label">Contraseña <span class="text-danger">*</span></label>
+                        <h:inputSecret id="password" value="#{aDUsuario.selectedUser.contrasena}" required="true" 
+                                       class="form-control">
+                            <f:passThroughAttribute name="placeholder" value="Ingrese una contraseña" />
+                        </h:inputSecret>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="confirmPassword" class="form-label">Confirmar Contraseña <span class="text-danger">*</span></label>
+                        <h:inputSecret id="confirmPassword" value="#{aDUsuario.confirmPassword}" required="true" 
+                                       class="form-control">
+                            <f:passThroughAttribute name="placeholder" value="Confirme la contraseña" />
+                        </h:inputSecret>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="rol" class="form-label">Roles <span class="text-danger">*</span></label>
+                        <h:selectOneMenu value="#{aDUsuario.selectedUser.rolId.id}" class="form-select">
+                            <f:selectItems value="#{aDRol.roles}" var="rol" itemValue="#{rol.id}" itemLabel="#{rol.nombre}" />
+                        </h:selectOneMenu>
+                    </div>
+
+                    <!-- Botones para guardar o cancelar -->
+                    <div class="d-flex gap-2 mb-3">
+                        <h:commandButton value="Guardar" action="#{aDUsuario.updateUser}" styleClass="btn btn-primary" />
+                        <h:button value="Cancelar" outcome="index.xhtml" styleClass="btn btn-warning" />
+                    </div>
+                </section>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

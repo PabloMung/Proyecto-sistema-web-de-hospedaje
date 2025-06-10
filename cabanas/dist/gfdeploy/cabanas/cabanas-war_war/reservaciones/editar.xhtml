@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<body>
+    <ui:composition template="./../templeates/general.xhtml">
+        <ui:define name="top">
+            Editar Reservación - Cabañas Ixtepeji
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <section class="container">
+                    <!-- Encabezado de la sección -->
+                    <div class="mb-4">
+                        <h3>Editar Reservación</h3>
+                        <h:messages globalOnly="true" layout="table" styleClass="text-danger mt-2" />
+                    </div>
+
+                    <!-- Cuerpo del formulario -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Nombre Reservador (Solo lectura) -->
+                            <div class="form-group mb-3">
+                                <label for="nombreReservador" class="form-label">Nombre Reservador:</label>
+                                <h:inputText id="nombreReservador" value="#{aDReservacion.selectedReservacion.nombreReservador}" 
+                                             readonly="true" styleClass="form-control" />
+                            </div>
+
+                            <!-- Número de Personas -->
+                            <div class="form-group mb-3">
+                                <h:outputLabel for="numeroPersonas" value="Número de Personas" class="form-label" />
+                                <h:selectOneMenu id="numeroPersonas" value="#{aDReservacion.selectedReservacion.numeroDePersonas}" 
+                                                 class="form-select">
+                                    <f:selectItems value="#{aDReservacion.personasOptions}" var="persona" 
+                                                   itemValue="#{persona}" itemLabel="#{persona}" />
+                                </h:selectOneMenu>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="form-group mb-3">
+                                <label for="telefono" class="form-label">Teléfono:</label>
+                                <h:inputText id="telefono" value="#{aDReservacion.selectedReservacion.telefono}" 
+                                             styleClass="form-control" />
+                            </div>
+
+                            <!-- Fecha Entrada -->
+                            <div class="form-group mb-3">
+                                <label for="fechaEntrada" class="form-label">Fecha Entrada:</label>
+                                <h:inputText id="fechaEntrada" value="#{aDReservacion.selectedReservacion.fechaEntrada}" 
+                                             styleClass="form-control">
+                                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                                </h:inputText>
+                            </div>
+
+                            <!-- Fecha Salida -->
+                            <div class="form-group mb-3">
+                                <label for="fechaSalida" class="form-label">Fecha Salida:</label>
+                                <h:inputText id="fechaSalida" value="#{aDReservacion.selectedReservacion.fechaSalida}" 
+                                             styleClass="form-control">
+                                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                                </h:inputText>
+                            </div>
+                        </div>
+
+                        <!-- Tabla de Cabañas Disponibles -->
+<h:selectOneMenu id="cabana" value="#{aDReservacion.selectedCabanaId}" 
+                 class="form-control" required="true" requiredMessage="Seleccione una cabaña.">
+    <f:selectItem itemLabel="Seleccione una cabaña" itemValue="#{null}"/>
+    <f:selectItems value="#{aDReservacion.cabanasDisponibles}" var="cabana" 
+                   itemLabel="#{cabana.nombre}" itemValue="#{cabana.id}"/>
+</h:selectOneMenu>
+
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="d-flex gap-2 mt-4">
+                        <h:commandButton value="Guardar" action="#{aDReservacion.updateReservacion}" 
+                                         styleClass="btn btn-primary" />
+                        <h:commandButton value="Cancelar" action="indexRe.xhtml?faces-redirect=true" 
+                                         styleClass="btn btn-warning" />
+                    </div>
+                </section>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

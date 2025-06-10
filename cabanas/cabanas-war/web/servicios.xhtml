@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios - Centro Ecoturístico La Cumbre Ixtepeji</title>
+    <link rel="icon" href="img/logoixtepeji.jpg" type="image/png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+        }
+        .navbar .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .navbar .nav-link:hover {
+            color: #007bff !important;
+        }
+        .header-banner {
+            background: url('img/cabañas.jpeg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .header-banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .content-section {
+            padding: 40px 0;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card .card-body {
+            padding: 15px;
+        }
+        .service-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer img {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h:form>
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="indexHome.xhtml">
+                        <img src="img/logoixtepeji.jpg" alt="Logo" style="height: 40px;" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            
+                            <a href="indexHome.xhtml" class="nav-link active">Home</a>
+                            <a href="nosotros.xhtml" class="nav-link">Nosotros</a>
+                            <a href="solReservacion.xhtml" class="nav-link">Reservacion</a>
+                            <a href="#con" class="nav-link">Contactos</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-banner">
+                <h1>Servicios</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="content-section">
+                <div class="container">
+                    <h2>Nuestros Servicios</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <img src="img/cabañas.jpeg" alt="Cabañas" />
+                                <div class="card-body">
+                                    <h5>Cabañas</h5>
+                                    <p>Nuestras cabañas están diseñadas para ofrecer comodidad y tranquilidad, rodeadas de un entorno natural que invita al descanso.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <img src="img/restaurante.jpeg" alt="Restaurante" />
+                                <div class="card-body">
+                                    <h5>Restaurante</h5>
+                                    <p>Disfruta de deliciosos platillos preparados con ingredientes frescos y locales, en un ambiente acogedor con vistas al bosque.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <img src="img/tirolesa.jpg" alt="Tirolesa" />
+                                <div class="card-body">
+                                    <h5>Tirolesa</h5>
+                                    <p>Experimenta la adrenalina de nuestra tirolesa, una actividad perfecta para los amantes de la aventura y las alturas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <img src="img/caminata.jpg" alt="Senderismo" />
+                                <div class="card-body">
+                                    <h5>Senderismo</h5>
+                                    <p>Explora los senderos de La Cumbre Ixtepeji, rodeados de flora y fauna, ideales para caminatas relajantes o desafiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-card">
+                                <img src="img/cilcis.png" alt="Ciclismo de Montaña" />
+                                <div class="card-body">
+                                    <h5>Ciclismo de Montaña</h5>
+                                    <p>Recorre nuestros caminos en bicicleta y descubre paisajes impresionantes mientras disfrutas de un ejercicio al aire libre.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div id="con" class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://api.whatsapp.com/send?phone=%2B529511585206">
+                            <img src="img/telefono.jpg" alt="Teléfono" />
+                        </a>
+                        <h5>Teléfono</h5>
+                        <p>951 173 5307 </p>
+                        <p>951 560 4039</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                            <img src="img/face.png" alt="Facebook" />
+                        </a>
+                        <h5>Facebook</h5>
+                        <p>Centro Ecoturístico</p>
+                        <p>La Cumbre Ixtepeji</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://maps.app.goo.gl/yLPMqcwaZDsenF6J7">
+                            <img src="img/ubicacion.jpg" alt="Ubicación" />
+                        </a>
+                        <h5>Ubicación</h5>
+                        <p>Carretera federal 175</p>
+                        <p>Oaxaca-Guelatao, Santa Catarina Ixtepeji</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                            <img src="img/opinion.jpg" alt="Opiniones" />
+                        </a>
+                        <h5>Opiniones</h5>
+                        <p>Lo que nuestros clientes opinan</p>
+                    </div>
+                </div>
+                <h2 style="font-size: 1.2rem; margin-top: 20px;">Centro Ecoturístico | La Cumbre Ixtepeji</h2>
+            </div>
+        </footer>
+    </h:form>
+</body>
+</html>

@@ -1,0 +1,765 @@
+.menu-container {
+  display: flex; /* Habilita flexbox */
+  flex-direction: column; /* Los botones se apilan verticalmente */
+  align-items: center; /* Centra los botones horizontalmente */
+  gap: 100em; /* Espaciado uniforme entre los botones */
+  padding: 0; /* Elimina espacio adicional interno */
+  margin: 0; /* Elimina espacio adicional externo */
+  background-color: #0000ff; /* Fondo azul */
+  height: auto; /* Ajusta la altura al contenido */
+  text-align: center;
+}
+
+.menu-item button,
+.menu-item a {
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  padding: 0.3em 1em; /* Espaciado interno de los botones */
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em; /* Ajusta el tamaño del texto */
+  line-height: 1; /* Altura de línea ajustada al texto */
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #007BFF; /* Borde azul */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #007BFF; /* Fondo azul */
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Evita dividir el texto */
+}
+
+.menu-item a:hover,
+.menu-item button:hover {
+  background: #0056b3; /* Color de fondo al pasar el cursor */
+  color: #fff;
+  border-color: #0056b3;
+  transition: all 0.3s ease;
+}
+/*USUARIOS*/
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Tamaño base más grande */
+    line-height: 1.5;
+}
+
+/* Botón Nuevo Usuario */
+.btn-primary {
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    padding: 12px 24px; /* Botón más grande */
+    border-radius: 8px; /* Bordes más suaves */
+    cursor: pointer;
+    font-size: 18px; /* Tamaño de fuente más grande */
+    text-transform: capitalize;
+}
+.btn-primary:hover {
+    background-color: #17a582;
+}
+
+/* Tabla */
+.table_id {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.table_id th {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 16px; /* Más espacio en las celdas */
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px; /* Tamaño de texto más grande */
+}
+
+.table_id td {
+    padding: 16px; /* Más espacio en las celdas */
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 16px; /* Texto en las celdas más grande */
+}
+
+.table-striped tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Botones Editar y Borrar */
+.btn-info {
+    background-color: #0dcaf0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Botones más grandes */
+    border-radius: 8px;
+    margin-right: 8px;
+    font-size: 16px; /* Texto más grande */
+    cursor: pointer;
+}
+
+.btn-info:hover {
+    background-color: #0ba9cc;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Botones más grandes */
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Rol */
+.rol {
+    background-color: #000;
+    color: #fff;
+    padding: 6px 12px; /* Más espacio alrededor */
+    border-radius: 8px;
+    font-size: 16px; /* Texto más grande */
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+/* Escalar Sección Principal */
+section {
+    transform: scale(1.1); /* Aumentar tamaño general de la sección */
+    transform-origin: top left; /* Punto de origen de escala */
+    margin: 20px; /* Margen adicional */
+}
+
+/* Encabezado */
+h3 {
+    font-size: 24px; /* Encabezado más grande */
+    margin-bottom: 16px;
+    color: #000;
+}
+
+/* CREAR USUARIO*/
+
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Tamaño base */
+    line-height: 1.5;
+}
+
+/* Sección Principal */
+section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px; /* Ancho máximo */
+}
+
+/* Encabezado */
+.page__heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+
+
+/* Notificación de campos obligatorios */
+.text-danger {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #000;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #0dcaf0;
+}
+
+.btn-primary:hover {
+    background-color: #0ba9cc;
+}
+
+.btn-warning {
+    background-color: #fd7e14;
+}
+
+.btn-warning:hover {
+    background-color: #e0690c;
+}
+
+/* Alineación del formulario */
+.form-group {
+    display: inline-block;
+    width: 48%; /* Distribuye los campos en dos columnas */
+    vertical-align: top;
+}
+
+.form-group:nth-child(odd) {
+    margin-right: 4%; /* Espaciado entre columnas */
+}
+
+/* Roles Selector */
+.form-group select {
+    padding: 12px;
+}
+/* CABAÑAS */
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sección principal */
+section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+/* Encabezado de la sección */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+
+/* Formularios */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.col-md-3, .col-md-6 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0dcaf0;
+    box-shadow: 0 0 5px rgba(13, 193, 233, 0.3);
+    outline: none;
+}
+
+/* Labels */
+h\:outputLabel {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #0dc1e9;
+    border-color: #0dc1e9;
+}
+
+.btn-primary:hover {
+    background-color: #0ba9cc;
+    border-color: #0ba9cc;
+}
+
+.btn-warning {
+    background-color: #f3580b;
+    border-color: #f3580b;
+}
+
+.btn-warning:hover {
+    background-color: #d94b09;
+    border-color: #d94b09;
+}
+
+/* Textarea */
+textarea.form-control {
+    resize: none;
+    height: auto;
+}
+
+/* Espaciado entre grupos */
+.mt-12 {
+    margin-top: 20px;
+}
+
+/* Selectores */
+select.form-control {
+    padding: 10px;
+    appearance: none; /* Remueve estilo por defecto */
+    background: url('data:image/svg+xml;utf8,<svg fill="%23000000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 7l3-3 3 3m0 6l-3 3-3-3"/></svg>') no-repeat right 10px center;
+    background-size: 16px;
+    font-size: 16px;
+}
+/* ACTIVIDADES  crea */
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sección principal */
+section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+/* Encabezado */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+
+/* Formulario */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-md-3, .col-md-6 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+/* Etiquetas */
+label {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Campos de Texto e Inputs */
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+    border-color: #0dcaf0;
+    box-shadow: 0 0 5px rgba(13, 193, 233, 0.5);
+    outline: none;
+}
+
+/* Textarea (Descripción) */
+textarea {
+    resize: none;
+    height: 100px;
+    line-height: 1.5;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0dcaf0;
+}
+
+.btn-primary:hover {
+    background-color: #0ba9cc;
+}
+
+.btn-warning {
+    background-color: #fd7e14;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #e0690b;
+}
+
+/* Ajuste del Layout */
+.mt-12 {
+    margin-top: 20px;
+}
+/*crea actividad*/
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sección Principal */
+section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+/* Encabezado */
+h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de formulario */
+div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Etiquetas */
+label {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Campos de texto */
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+    border-color: #0dcaf0;
+    box-shadow: 0 0 5px rgba(13, 193, 233, 0.5);
+    outline: none;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Columnas para formularios */
+div > div {
+    flex: 1 1 30%; /* Tres columnas */
+    min-width: 300px;
+}
+
+/* Botones */
+h\:commandButton,
+h\:button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    width: 120px;
+    margin-right: 10px;
+}
+
+h\:commandButton {
+    background-color: #0dcaf0; /* Botón azul */
+}
+
+h\:commandButton:hover {
+    background-color: #0ba9cc;
+}
+
+h\:button {
+    background-color: #fd7e14; /* Botón naranja */
+}
+
+h\:button:hover {
+    background-color: #e0690b;
+}
+
+/* Alineación de los botones */
+div:last-child {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+/* TUS RESERVACIONES*/
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Contenedor Principal */
+#reservacionesForm {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/* Encabezado */
+h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Botón Nueva Reservación */
+.btn-primary {
+    display: inline-block;
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #17a582;
+}
+
+/* Tabla de Reservaciones */
+#reservacionesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#reservacionesTable th {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#reservacionesTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+
+#reservacionesTable tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#reservacionesTable tr:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+/* Acciones - Botones */
+#reservacionesTable .btn-primary,
+#reservacionesTable .btn-warning {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 0;
+}
+
+#reservacionesTable .btn-primary {
+    background-color: #0dcaf0;
+}
+
+#reservacionesTable .btn-primary:hover {
+    background-color: #0ba9cc;
+}
+
+#reservacionesTable .btn-warning {
+    background-color: #fd7e14;
+}
+
+#reservacionesTable .btn-warning:hover {
+    background-color: #e0690b;
+}
+
+/* Alineación de botones de acciones */
+#reservacionesTable .btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    #reservacionesTable th,
+    #reservacionesTable td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-primary,
+    .btn-warning {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+/* agregar reservacion */

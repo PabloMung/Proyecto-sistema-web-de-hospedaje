@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../templeates/general.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+        <!-- Sección principal -->
+        <section>
+            <!-- Encabezado de la sección -->
+            <div>
+                <h3 style="color: #000;">Editar Actividad</h3>
+            </div>
+
+            <!-- Cuerpo de la sección -->
+            <div>
+                <h:messages globalOnly="true" style="color: red;" />
+
+                <!-- Formulario de edición de actividad -->
+                <div class="row">
+                    <!-- Campo para el nombre de la actividad -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nombre" style="display: inline-block; color: #000; font-size: 15px;">Nombre</label>
+                            <h:inputText id="nombre" value="#{aDActividad.selectedActividad.nombre}" required="true"
+                                       >
+                                <f:passThroughAttribute name="oninput" value="validity.valid||(value='');" />
+                            </h:inputText>
+                        </div>
+                    </div>
+
+                    <!-- Campo para el precio de adulto -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="precio" style="display: inline-block; color: #000; font-size: 15px;">Precio Adulto</label>
+                            <h:inputText id="precio" value="#{aDActividad.selectedActividad.precioAdulto}" required="true"
+                                         >
+                                <f:passThroughAttribute name="oninput" value="validity.valid||(value='');" />
+                            </h:inputText>
+                        </div>
+                    </div>
+
+                    <!-- Campo para el precio de niño -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="precion" style="display: inline-block; color: #000; font-size: 15px;">Precio Niño</label>
+                            <h:inputText id="precion" value="#{aDActividad.selectedActividad.precioNino}" required="true"
+                                         >
+                                <f:passThroughAttribute name="oninput" value="validity.valid||(value='');" />
+                            </h:inputText>
+                        </div>
+                    </div>
+
+                    <!-- Campo para la descripción -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h:inputTextarea id="descripcion" value="#{aDActividad.selectedActividad.descripcion}" 
+                                             style="height: 100px; width: 100%;" required="true" />
+                            <label for="descripcion" style="display: inline-block; color: #000; font-size: 15px;">Descripcion</label>
+                        </div>
+                    </div>
+
+                    <!-- Botones para guardar y cancelar -->
+                    <div class="col-md-6 mt-12" style="margin-top: auto;">
+                        <div class="form-group" style="margin-left: auto;">
+                            <h:commandButton value="Guardar" action="#{aDActividad.updateActividad}" 
+                                             styleClass="btn btn-primary" />
+                            <h:button value="Cancelar" outcome="/Actividad/index.xhtml" 
+                                      styleClass="btn btn-warning" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </section>
+    </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

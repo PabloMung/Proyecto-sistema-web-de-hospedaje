@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Facelets Template</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f8f9fa;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            .header-banner {
+                background: url('img/mirador.jpg') no-repeat center center;
+                background-size: cover;
+                height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                position: relative;
+            }
+            .header-banner::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+            }
+            .header-banner h1 {
+                font-size: 2rem;
+                font-weight: 700;
+                position: relative;
+                z-index: 1;
+            }
+            .sidebar {
+                width: 250px;
+                background-color: #fff;
+                min-height: calc(100vh - 200px);
+                padding: 20px;
+                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                position: fixed;
+                top: 200px;
+                left: 0;
+            }
+            .sidebar .nav-link {
+                color: #333;
+                font-weight: 500;
+                margin-bottom: 10px;
+                text-decoration: none;
+            }
+            .sidebar .nav-link:hover {
+                color: #007bff;
+            }
+            .content-area {
+                margin-left: 270px;
+                padding: 40px;
+                min-height: calc(100vh - 200px);
+            }
+            .footer {
+                background-color: #fff;
+                padding: 20px 0;
+                text-align: center;
+                border-top: 1px solid #ddd;
+                margin-left: 270px;
+            }
+        </style>
+    </h:head>
+    
+    <h:body>
+        <div class="header-banner">
+            <h1><ui:insert name="top">Cabañas Ixtepeji</ui:insert></h1>
+        </div>
+
+        <div class="d-flex">
+            <div class="sidebar">
+                <ui:insert name="left">
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/usuarios/index.xhtml')}" styleClass="menu-item">
+                            <h:link value="Usuarios" outcome="/usuarios/index.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/roles/index.xhtml')}" styleClass="menu-item">
+                            <h:link value="Roles" outcome="/roles/index.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/cabanas/index.xhtml')}" styleClass="menu-item">
+                            <h:link value="Cabañas" outcome="/cabanas/index.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/cabanas/ver.xhtml')}" styleClass="menu-item">
+                            <h:link value="Ver Cabañas" outcome="/cabanas/ver.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/Actividad/index.xhtml')}" styleClass="menu-item">
+                            <h:link value="Actividades" outcome="/Actividad/index.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/reservaciones/index.xhtml')}" styleClass="menu-item">
+                            <h:link value="Reservar" outcome="/reservaciones/index.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup rendered="#{aDUsuario.tienePermiso('/reservaciones/indexRe.xhtml')}" styleClass="menu-item">
+                            <h:link value="Reservaciones" outcome="/reservaciones/indexRe.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                    <div>
+                        <h:panelGroup styleClass="menu-item">
+                            <h:link value="Cerrar Sesión" outcome="/inicio.xhtml" styleClass="nav-link" />
+                        </h:panelGroup>
+                    </div>
+                </ui:insert>
+            </div>
+
+            <div class="content-area">
+                <ui:insert name="content"></ui:insert>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <h2 style="font-size: 1.2rem;">Centro Ecoturístico | La Cumbre Ixtepeji</h2>
+            </div>
+        </footer>
+    </h:body>
+
+</html>

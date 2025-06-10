@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CENTRO ECOTURÍSTICO LA CUMBRE IXTEPEJI</title>
+    <link rel="icon" href="img/logoixtepeji.jpg" type="image/png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+        }
+        .navbar .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .navbar .nav-link:hover {
+            color: #007bff !important;
+        }
+        .header-section {
+            padding: 40px 0;
+            text-align: left;
+        }
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .header-banner {
+            background: url('img/puente.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .header-banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .carousel-section {
+            padding: 40px 0;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .carousel-caption h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+        .search-bar {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .search-bar select, .search-bar input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 150px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+        .cabin-listing {
+            margin: 40px 0;
+        }
+        .cabin-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .cabin-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cabin-card .card-body {
+            padding: 15px;
+        }
+        .cabin-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .cabin-card p {
+            margin: 0;
+            color: #666;
+        }
+        .footer {
+            background-color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer img {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h:form>
+        <header>
+            
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logoixtepeji.jpg" alt="Logo" style="height: 40px;" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                          
+                            <a href="nosotros.xhtml" class="nav-link">Nosotros</a>
+                            <a href="servicios.xhtml" class="nav-link">Servicios</a>
+                            <a href="solReservacion.xhtml" class="nav-link">Reservacion</a>
+                            <a href="#con" class="nav-link">Contactos</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-banner">
+                <h1>Centro Ecoturístico</h1>
+            </div>
+        </header>
+
+        
+       
+        <main>
+            <!-- Carousel Section -->
+            <section class="carousel-section">
+                <div class="container">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <!-- Add more indicators here for additional slides -->
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/cabañas.jpeg" class="d-block w-100" alt="Cabañas" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Cabañas</h5>
+                                    <p>Disfruta de nuestras acogedoras cabañas en medio de la naturaleza, perfectas para una escapada tranquila.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/tirolesa.jpg" class="d-block w-100" alt="Tirolesa" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Tirolesa</h5>
+                                    <p>Vive la emoción de deslizarte por nuestra tirolesa con vistas impresionantes del bosque.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cilcis.png" class="d-block w-100" alt="Ciclismo" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Ciclismo de Montaña</h5>
+                                    <p>Explora los senderos de La Cumbre Ixtepeji en bicicleta y descubre la belleza del entorno.</p>
+                                </div>
+                            </div>
+                            <!-- Add more carousel items here as needed -->
+                            <!-- Example: 
+                            <div class="carousel-item">
+                                <img src="img/new_activity.jpg" class="d-block w-100" alt="New Activity">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>New Activity</h5>
+                                    <p>Description of the new activity or cabin.</p>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cabin-listing">
+                <div class="container">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Cabañas</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="cabin-card">
+                                <img src="img/cabañas.jpeg" alt="Cabaña 1" />
+                                <div class="card-body">
+                                    <h5>Cabaña Norte</h5>
+                                    <p>★★★★★</p>
+                                    <p>$350 por Dia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cabin-card">
+                                <img src="img/caba.png" alt="Cabaña 2" />
+                                <div class="card-body">
+                                    <h5>Cabaña Sur</h5>
+                                    <p>★★★★</p>
+                                    <p>$350 por Dia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cabin-card">
+                                <img src="img/cabañadies.jpg" alt="Cabaña 3" />
+                                <div class="card-body">
+                                    <h5>Cabaña Familiar</h5>
+                                    <p>★★★★</p>
+                                    <p>$500 por Dia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://api.whatsapp.com/send?phone=%2B529511585206">
+                            <img src="img/telefono.jpg" alt="Teléfono" />
+                        </a>
+                        <h5 id="con">Teléfono</h5>
+                        <p>951 173 5307 951 560 4039</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                            <img src="img/face.png" alt="Facebook" />
+                        </a>
+                        <h5>Facebook</h5>
+                        <p>Centro Ecoturístico La Cumbre Ixtepeji</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://maps.app.goo.gl/yLPMqcwaZDsenF6J7">
+                            <img src="img/ubicacion.jpg" alt="Ubicación" />
+                        </a>
+                        <h5>Ubicación</h5>
+                        <p>Carretera federal 175 Oaxaca-Guelatao, Santa Catarina Ixtepeji</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.facebook.com/profile.php?id=100094426500831">
+                            <img src="img/opinion.jpg" alt="Opiniones" />
+                        </a>
+                        <h5>Opiniones</h5>
+                        <p>Lo que nuestros clientes opinan</p>
+                    </div>
+                </div>
+                <h2 style="font-size: 1.2rem; margin-top: 20px;">Centro Ecoturístico | La Cumbre Ixtepeji</h2>
+            </div>
+        </footer>
+    </h:form>
+</body>
+
+</html>
